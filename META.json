@@ -1,0 +1,134 @@
+{
+   "X_No_Archive" : "Yes",
+   "abstract" : "Programmatic interface to xmake's xrepo dependency manager for Affix",
+   "author" : [
+      "Sanko Robinson <sanko@cpan.org>"
+   ],
+   "description" : "This module provides a Perl class interface to the xrepo package manager (part of the xmake build system)",
+   "dynamic_config" : 0,
+   "generated_by" : "App::mii v1.0.0",
+   "keywords" : [
+      "ffi",
+      "dll",
+      "library",
+      "wrapper",
+      "xmake",
+      "xrepo",
+      "affix",
+      "win32",
+      "xs"
+   ],
+   "license" : [
+      "artistic_2"
+   ],
+   "meta-spec" : {
+      "url" : "https://metacpan.org/pod/CPAN::Meta::Spec",
+      "version" : 2
+   },
+   "name" : "Affix-Wrap-XRepo",
+   "no_index" : {
+      "directory" : [
+         "t",
+         "xt",
+         "share",
+         "eg"
+      ],
+      "package" : [
+         "Affix::Type"
+      ]
+   },
+   "optional_features" : {
+      "DD" : {
+         "description" : "Dump structures",
+         "prereqs" : {
+            "runtime" : {
+               "requires" : {
+                  "Data::Printer" : "0"
+               }
+            }
+         }
+      }
+   },
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Alien::Xmake" : "0",
+            "Getopt::Long" : "2.36",
+            "Path::Tiny" : "0"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "Alien::Xmake" : "0",
+            "CPAN::Meta" : "0",
+            "Exporter" : "5.57",
+            "ExtUtils::Helpers" : "0.028",
+            "ExtUtils::Install" : "0",
+            "ExtUtils::InstallPaths" : "0.002",
+            "File::Basename" : "0",
+            "File::Find" : "0",
+            "File::Path" : "0",
+            "File::Spec::Functions" : "0",
+            "Getopt::Long" : "2.36",
+            "JSON::PP" : "2",
+            "Path::Tiny" : "0",
+            "perl" : "v5.40.0"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Alien::Xmake" : "0",
+            "Capture::Tiny" : "0",
+            "JSON::PP" : "0",
+            "Path::Tiny" : "0",
+            "perl" : "v5.40.0"
+         }
+      },
+      "test" : {
+         "requires" : {
+            "Test2::V0" : "0"
+         }
+      }
+   },
+   "provides" : {
+      "Affix::Wrap::Xrepo" : {
+         "file" : "lib/Affix/Wrap/Xrepo.pm",
+         "version" : "v1.0.0"
+      },
+      "Affix::Wrap::Xrepo::PackageInfo" : {
+         "file" : "lib/Affix/Wrap/Xrepo.pm"
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/sanko/Affix-Wrap-Xrepo/issues"
+      },
+      "homepage" : "https://github.com/sanko/Affix-Wrap-Xrepo",
+      "license" : [
+         "http://www.perlfoundation.org/artistic_license_2_0"
+      ],
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/sanko/Affix-Wrap-Xrepo.git",
+         "web" : "https://github.com/sanko/Affix-Wrap-Xrepo"
+      }
+   },
+   "version" : "v1.0.0",
+   "x_help_wanted" : [
+      "Tester",
+      "Documenter"
+   ],
+   "x_ignore" : [
+      ".tidyallrc",
+      ".gitignore",
+      ".clang-format",
+      ".github/",
+      ".github/*",
+      ".gitmodules",
+      "eg/**",
+      ".github/**"
+   ],
+   "x_serialization_backend" : "JSON::PP version 4.16",
+   "x_static_install" : 0
+}
