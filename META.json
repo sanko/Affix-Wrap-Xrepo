@@ -25,7 +25,7 @@
       "url" : "https://metacpan.org/pod/CPAN::Meta::Spec",
       "version" : 2
    },
-   "name" : "Affix-Wrap-XRepo",
+   "name" : "Xrepo",
    "no_index" : {
       "directory" : [
          "t",
@@ -91,12 +91,12 @@
       }
    },
    "provides" : {
-      "Affix::Wrap::Xrepo" : {
-         "file" : "lib/Affix/Wrap/Xrepo.pm",
+      "Xrepo" : {
+         "file" : "lib/Xrepo.pm",
          "version" : "v1.0.0"
       },
-      "Affix::Wrap::Xrepo::PackageInfo" : {
-         "file" : "lib/Affix/Wrap/Xrepo.pm"
+      "Xrepo::PackageInfo" : {
+         "file" : "lib/Xrepo.pm"
       }
    },
    "release_status" : "stable",

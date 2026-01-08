@@ -39,7 +39,7 @@ my $header_path = $pkg->find_header( 'png.h' );
 
 This module acts as an intelligent bridge between Perl and the `xrepo` C/C++ package manager.
 
-While [Affix](https://metacpan.org/pod/Affix) or [FFI::Platypus](https://metacpan.org/pod/FFI%3A%3APlatypus) or `Inline::C` can handle the calling of native functions, Affix::Wrap::Xrepo
+While [Affix](https://metacpan.org/pod/Affix) or [FFI::Platypus](https://metacpan.org/pod/FFI%3A%3APlatypus) or [Inline::C](https://metacpan.org/pod/Inline%3A%3AC) can handle the calling of native functions, Affix::Wrap::Xrepo
 handles the **acquisition** of the libraries containing those functions. It automates the entire dependency lifecycle:
 
 - 1. Provisioning:

@@ -2,11 +2,11 @@ use v5.40;
 use Test2::V0 '!subtest', -no_srand => 1;
 use Test2::Util::Importer 'Test2::Tools::Subtest' => ( subtest_streamed => { -as => 'subtest' } );
 use lib 'lib', '../lib', 'blib/lib', '../blib/lib';
-use Affix::Wrap::Xrepo;
+use Xrepo;
 #
-ok $Affix::Wrap::Xrepo::VERSION, 'Affix::Wrap::Xrepo::VERSION';
+ok $Xrepo::VERSION, 'Xrepo::VERSION';
 #
-my $repo = Affix::Wrap::Xrepo->new( verbose => 0 );
+my $repo = Xrepo->new( verbose => 0 );
 ok my $pkg = $repo->install('libpng'), 'install libpng';
 skip_all 'Failed to install libpng', 3 unless $pkg;
 diag 'Found library at: ' . $pkg->libpath;

@@ -1,7 +1,7 @@
 use v5.40;
 use feature 'class';
 no warnings 'experimental::class';
-class Affix::Wrap::Xrepo v1.0.0 {
+class Xrepo v1.0.0 {
     use Alien::Xmake;
     use Capture::Tiny qw[capture];
     use JSON::PP;
@@ -12,7 +12,7 @@ class Affix::Wrap::Xrepo v1.0.0 {
     field $xmake = Alien::Xmake->new;
     method blah ($msg) { return unless $verbose; say $msg; }
     #
-    class Affix::Wrap::Xrepo::PackageInfo {
+    class Xrepo::PackageInfo {
         use Path::Tiny;
         field $includedirs : param : reader;
         field $libfiles    : param : reader;
@@ -142,7 +142,7 @@ class Affix::Wrap::Xrepo v1.0.0 {
             $self->blah('xrepo returned no library files. Is the package header-only or failed to build?');
 
             # If it's header only, we return the object but libpath will be undef
-            return Affix::Wrap::Xrepo::PackageInfo->new(
+            return Xrepo::PackageInfo->new(
                 includedirs => $incdirs,
                 libfiles    => $libfiles,
                 license     => $info->{license}  // (),
@@ -174,7 +174,7 @@ class Affix::Wrap::Xrepo v1.0.0 {
             ($found_lib) //= grep {/\.a$/i} @$libfiles unless $info->{shared};
         }
         $self->blah( "Could not identify primary binary from: " . join( ", ", @$libfiles ) ) unless $found_lib;
-        return Affix::Wrap::Xrepo::PackageInfo->new(
+        return Xrepo::PackageInfo->new(
             includedirs => $incdirs,
             libfiles    => $libfiles,
             license     => $info->{license}  // (),
