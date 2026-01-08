@@ -41,7 +41,7 @@ Affix::Wrap::Xrepo - Solves the Headache of Finding and Building Shared Librarie
 
 This module acts as an intelligent bridge between Perl and the C<xrepo> C/C++ package manager.
 
-While L<Affix> or L<FFI::Platypus> or C<Inline::C> can handle the calling of native functions, Affix::Wrap::Xrepo
+While L<Affix> or L<FFI::Platypus> or L<Inline::C> can handle the calling of native functions, Affix::Wrap::Xrepo
 handles the B<acquisition> of the libraries containing those functions. It automates the entire dependency lifecycle:
 
 =over
