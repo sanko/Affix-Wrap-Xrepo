@@ -7,6 +7,14 @@ use Xrepo;
 ok $Xrepo::VERSION, 'Xrepo::VERSION';
 #
 my $repo = Xrepo->new( verbose => 0 );
+use Alien::Xmake;
+my $xmake = Alien::Xmake->new;
+my $exe   = $xmake->exe;
+diag `$exe --help`;
+
+#~ diag `$exe update`;
+#~ xmake.exe lua private.xrepo install -y -k shared libpng
+diag `$exe lua private.xrepo install -y -k shared libpng`;
 ok my $pkg = $repo->install('libpng'), 'install libpng';
 skip_all 'Failed to install libpng', 3 unless $pkg;
 diag 'Found library at: ' . $pkg->libpath;

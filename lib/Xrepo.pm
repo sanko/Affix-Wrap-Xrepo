@@ -46,14 +46,14 @@ class Xrepo v1.0.0 {
         say "[*] xrepo: ensuring $full_spec is installed..." if $verbose;
 
         # Install
-        my @install_cmd = ( $xmake->xrepo, 'install', '-y', @args, $full_spec );
+        my @install_cmd = ( $xmake->exe, qw[lua private.xrepo], 'install', '-y', @args, $full_spec );
         $self->blah("Running: @install_cmd");
         my ( $out, $err, $exit ) = capture { system @install_cmd };
         die "xrepo install failed:\nCommand: @install_cmd\nOutput:\n$out\nError:\n$err" if $exit != 0;
 
         # Fetch (must use same args to get correct paths for arch/mode)
         warn "[*] xrepo: fetching paths...\n" if $verbose;
-        my @fetch_cmd = ( $xmake->xrepo, 'fetch', '--json', @args, $full_spec );
+        my @fetch_cmd = ( $xmake->exe, qw[lua private.xrepo], 'fetch', '--json', @args, $full_spec );
         $self->blah("Running: @fetch_cmd");
         my ( $json_out, $json_err, $json_exit ) = capture { system @fetch_cmd };
         die "xrepo fetch failed:\nCommand: @fetch_cmd\nError:\n$json_err" if $json_exit != 0;
@@ -69,22 +69,22 @@ class Xrepo v1.0.0 {
     method uninstall ( $pkg_spec, %opts ) {
         my @args = $self->_build_args( \%opts );
         say "[*] xrepo: uninstalling $pkg_spec..." if $verbose;
-        system $xmake->xrepo, 'remove', '-y', @args, $pkg_spec;
+        system $xmake->exe, qw[lua private.xrepo], 'remove', '-y', @args, $pkg_spec;
     }
 
     method search ($query) {
         say "[*] xrepo: searching for $query..." if $verbose;
-        system $xmake->xrepo, 'search', $query;
+        system $xmake->exe, qw[lua private.xrepo], 'search', $query;
     }
 
     method clean () {
         say '[*] xrepo: cleaning cache...' if $verbose;
-        system $xmake->xrepo, 'clean', '-y';
+        system $xmake->exe, qw[lua private.xrepo], 'clean', '-y';
     }
     #
     method add_repo ( $name, $url, $branch //= () ) {
         say "[*] xrepo: adding repo $name..." if $verbose;
-        my @cmd = ( $xmake->xrepo, 'add-repo', '-y', $name, $url );
+        my @cmd = ( $xmake->exe, qw[lua private.xrepo], 'add-repo', '-y', $name, $url );
         push @cmd, $branch if defined $branch;
         my ( $out, $err, $exit ) = capture { system @cmd };
         die "xrepo add-repo failed:\n$err" if $exit != 0;
@@ -93,12 +93,12 @@ class Xrepo v1.0.0 {
 
     method remove_repo ($name) {
         say "[*] xrepo: removing repo $name..." if $verbose;
-        system $xmake->xrepo, 'remove-repo', '-y', $name;
+        system $xmake->exe, qw[lua private.xrepo], 'remove-repo', '-y', $name;
     }
 
     method update_repo ( $name //= () ) {
         say '[*] xrepo: updating repositories...' if $verbose;
-        my @cmd = ( $xmake->xrepo, 'update-repo', '-y' );
+        my @cmd = ( $xmake->exe, qw[lua private.xrepo], 'update-repo', '-y' );
         push @cmd, $name if defined $name;
         system @cmd;
     }

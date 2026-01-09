@@ -16,8 +16,8 @@ class    #
     use JSON::PP 2            qw[encode_json decode_json];
 
     # Not in CORE
-    use Path::Tiny qw[path];
-    use ExtUtils::Helpers 0.028 qw[make_executable split_like_shell detildefy];
+    use Path::Tiny        qw[path];
+    use ExtUtils::Helpers qw[make_executable split_like_shell detildefy];
     #
     field $action : param //= 'build';
     field $meta : reader = CPAN::Meta->load_file('META.json');

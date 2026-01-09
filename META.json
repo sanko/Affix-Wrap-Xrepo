@@ -62,7 +62,7 @@
             "Alien::Xmake" : "0",
             "CPAN::Meta" : "0",
             "Exporter" : "5.57",
-            "ExtUtils::Helpers" : "0.028",
+            "ExtUtils::Helpers" : "0",
             "ExtUtils::Install" : "0",
             "ExtUtils::InstallPaths" : "0.002",
             "File::Basename" : "0",
